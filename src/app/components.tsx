@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   brand,
   differentials,
@@ -20,7 +21,7 @@ const buttonClass =
 export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/30 bg-[#fffaf7]/62 shadow-[0_14px_50px_rgba(63,52,49,0.06)] backdrop-blur-2xl">
-      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[72px] w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" aria-label="Fernanda Souza - início" className="shrink-0">
           <Image
             src={images.logo}
@@ -28,7 +29,7 @@ export function Header() {
             width={210}
             height={74}
             priority
-            className="h-auto w-36 drop-shadow-sm sm:w-44"
+            className="h-auto max-h-10 w-auto max-w-[150px] object-contain drop-shadow-sm sm:max-h-12 sm:max-w-[174px]"
           />
         </Link>
         <nav className="hidden items-center rounded-full border border-white/55 bg-white/35 px-2 py-2 text-sm font-medium text-[#594541] shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] lg:flex">
@@ -109,10 +110,10 @@ export function FloatingWhatsApp() {
     <TrackedWhatsAppLink
       href={whatsappHref}
       eventName="floating_whatsapp"
-      className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#8f5b58] text-xs font-bold text-white shadow-[0_18px_45px_rgba(63,52,49,0.28)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#744541] sm:bottom-6 sm:right-6"
+      className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_18px_42px_rgba(37,211,102,0.34),0_10px_28px_rgba(63,52,49,0.18)] transition-transform duration-300 hover:scale-[1.08] sm:bottom-6 sm:right-6 sm:h-16 sm:w-16"
       aria-label="Conversar no WhatsApp"
     >
-      WA
+      <FaWhatsapp aria-hidden="true" className="h-7 w-7 sm:h-8 sm:w-8" />
     </TrackedWhatsAppLink>
   );
 }
@@ -172,10 +173,10 @@ function Hero() {
     <section className="relative overflow-hidden bg-[linear-gradient(135deg,#fffaf7_0%,#f7eee9_48%,#fffdfb_100%)]">
       <div className="pointer-events-none absolute inset-x-0 top-24 h-px bg-gradient-to-r from-transparent via-[#d8b1a8]/60 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[linear-gradient(115deg,rgba(216,177,168,0.18),rgba(255,255,255,0)_62%)]" />
-      <div className="mx-auto grid min-h-screen w-full max-w-7xl items-center gap-12 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:px-8 lg:pb-24 lg:pt-36">
+      <div className="mx-auto grid min-h-screen w-full max-w-[1360px] items-center gap-12 px-4 pb-20 pt-28 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:gap-14 lg:px-8 lg:pb-24 lg:pt-32">
         <div className="reveal relative z-10 max-w-2xl">
           <SectionLabel>Fisioterapia pélvica especializada</SectionLabel>
-          <h1 className="text-5xl font-semibold leading-[1.02] text-[#3f3431] sm:text-6xl lg:text-[5.35rem]">
+          <h1 className="text-5xl font-semibold leading-[1.02] text-[#3f3431] sm:text-6xl lg:text-[5rem] xl:text-[5.35rem]">
             Fisioterapia Pélvica em Salvador
           </h1>
           <p className="mt-7 max-w-xl text-lg font-light leading-9 text-[#6a5752]">
@@ -203,16 +204,16 @@ function Hero() {
             ))}
           </dl>
         </div>
-        <div className="reveal relative min-h-[500px] lg:min-h-[700px]">
-          <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2.4rem] border border-[#d8b1a8]/40" />
-          <div className="relative h-full min-h-[500px] overflow-hidden rounded-[2.4rem] bg-[#eadfd9] shadow-[0_34px_90px_rgba(63,52,49,0.18)] lg:min-h-[700px]">
+        <div className="reveal relative min-h-[540px] lg:min-h-[740px] xl:min-h-[780px]">
+          <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] border border-[#d8b1a8]/35 sm:rounded-[2.75rem]" />
+          <div className="relative h-full min-h-[540px] overflow-hidden rounded-[2rem] bg-[#eadfd9] shadow-[0_38px_105px_rgba(63,52,49,0.16),0_12px_36px_rgba(143,91,88,0.1)] sm:rounded-[2.75rem] lg:min-h-[740px] xl:min-h-[780px]">
             <Image
               src={images.hero}
               alt="Fernanda Souza em consultório com modelos anatômicos pélvicos"
               fill
               priority
-              sizes="(min-width: 1024px) 58vw, 100vw"
-              className="scale-[1.02] object-cover object-[52%_42%]"
+              sizes="(min-width: 1280px) 62vw, (min-width: 1024px) 58vw, 100vw"
+              className="scale-[1.04] object-cover object-[52%_42%]"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#3f3431]/62 to-transparent p-7 text-white">
               <p className="max-w-sm text-sm font-light leading-6">
