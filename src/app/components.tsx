@@ -99,7 +99,18 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-[#eadfd9] px-4 py-5 text-center text-xs text-[#8a746d]">
-        © 2026 Fernanda Souza. Conteúdo informativo, sem substituir avaliação profissional.
+        <p>© 2026 Fernanda Souza. Conteúdo informativo, sem substituir avaliação profissional.</p>
+        <p className="mt-2 text-[10px] leading-5 text-[#a8948d]">
+          Site e SEO Google feito por:{" "}
+          <a
+            href="https://www.oleonardomachado.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-2 hover:underline"
+          >
+            www.oleonardomachado.com.br
+          </a>
+        </p>
       </div>
     </footer>
   );
